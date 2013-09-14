@@ -8,6 +8,13 @@
     <col class="work-logs-table-actions" />
   </colgroup>
   <tbody>
+    <% if work_logs.empty? %>
+      <tr>
+        <td class="empty-table-message" colspan="4">
+          There are no work logs for the selected date
+        </td>
+      </tr>
+    <% end %>
     <% work_logs.each do |work_log| %>
       <tr>
         <td>

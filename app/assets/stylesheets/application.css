@@ -53,6 +53,10 @@ h1 .btn-group.pull-right {
     display: inline;
 }
 
+td.empty-table-message {
+    text-align: center;
+}
+
 .work-logs-table {
     table-layout: fixed;
 }
