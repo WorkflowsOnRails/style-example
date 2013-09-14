@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hours: 9.99
+  comment: MyText
+  day: 2013-09-08
+
+two:
+  hours: 9.99
+  comment: MyText
+  day: 2013-09-08

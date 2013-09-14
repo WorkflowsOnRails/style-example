@@ -1,0 +1,52 @@
+<%# Parameters: work_logs (the work logs to render) %>
+
+<table class="table table-striped work-logs-table">
+  <colgroup>
+    <col class="work-logs-table-project-name" />
+    <col class="work-logs-table-comment" />
+    <col class="work-logs-table-hours" />
+    <col class="work-logs-table-actions" />
+  </colgroup>
+  <tbody>
+    <% work_logs.each do |work_log| %>
+      <tr>
+        <td>
+          <%= link_to work_log.project.name, project_path(work_log.project) %>
+        </td>
+        <td>
+          <%= work_log.comment %>
+        </td>
+        <td>
+          <%= work_log.hours %>
+        </td>
+        <td>
+          <div class="btn-group">
+          <%= link_to edit_work_log_path(work_log), class: 'btn-link' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+          <%= button_to work_log, class: 'btn-link',
+              method: 'delete' do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Comment</th>
+      <th>Hours</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th></th>
+      <th class="text-right">Total hours</th>
+      <th><%= total_time_logged(work_logs) %></th>
+      <th></th>
+    </tr>
+  </tfoot>
+</table>

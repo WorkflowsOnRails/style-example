@@ -1,0 +1,12 @@
+<%= simple_form_for client, class: 'form-horizontal' do |f| %>
+  <%= f.input :name, label: 'Client name', required: true %>
+  <%= f.input :contact_email, required: true %>
+  <%= f.input :account_number, required: true %>
+  <%= f.input :address, required: false %>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <%= f.button :submit, class: 'btn btn-success' %>
+      <%= link_to 'Cancel', :back, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

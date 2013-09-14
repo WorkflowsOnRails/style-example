@@ -1,0 +1,11 @@
+<h1>Log a work item</h1>
+
+<%= render partial: 'form', locals: {work_log: @work_log} %>
+
+<div class="spacer"></div>
+
+<h3>
+  View work logs for
+  <%= render partial: 'day_select', locals: {day: @day} %>
+</h3>
+<%= render partial: 'list', locals: {work_logs: @other_work_logs} %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  budget_hours: 9.99
+  deadline: 2013-09-07 22:40:59
+
+two:
+  name: MyText
+  budget_hours: 9.99
+  deadline: 2013-09-07 22:40:59

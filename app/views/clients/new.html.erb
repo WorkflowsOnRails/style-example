@@ -1,0 +1,9 @@
+<h1>
+  Add a New Client
+  <a class="btn btn-default pull-right" href="<%= clients_path %>">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    Back to clients
+  </a>
+</h1>
+
+<%= render partial: 'form', locals: {client: @client} %>

@@ -1,0 +1,13 @@
+<%# Parameters: work_log (the work log to edit) %>
+
+<%= simple_form_for work_log do |f| %>
+  <%= f.association :project, include_blank: false, required: true %>
+  <%= f.input :day, required: true %>
+  <%= f.input :hours, required: true %>
+  <%= f.input :comment, required: false %>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <%= f.button :submit, class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

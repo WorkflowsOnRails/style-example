@@ -1,0 +1,32 @@
+<h1>
+  <%= link_to @project.client.name, client_path(@project.client) %>
+  /
+  <%= @project.name %>
+  <div class="btn-group btn-group-md pull-right">
+    <a class="btn btn-default"
+       href="<%= edit_project_path(@project) %>">
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit Project
+    </a>
+  </div>
+</h1>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-md-2">Budget (hours)</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @project.budget_hours %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2">Deadline</label>
+    <div class="col-md-10">
+      <p class="form-control-static"><%= @project.deadline %></p>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<%= render partial: 'work_logs/list',
+    locals: {work_logs: @project.work_logs} %>

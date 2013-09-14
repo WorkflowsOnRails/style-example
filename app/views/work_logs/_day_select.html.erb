@@ -1,0 +1,10 @@
+<%# Parameters: day (the selected date)
+  # TODO: Share more code with simple_form %>
+
+<%= form_tag url_for(only_page: true), class: 'form-inline',
+    method: 'get' do |f| %>
+  <%= select_date day, {prefix: 'day'}, {class: 'date form-control'} %>
+  <button class="btn btn-link" type="submit">
+    <span class="glyphicon glyphicon-refresh"></span>
+  </button>
+<% end %>

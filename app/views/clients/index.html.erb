@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      Manage Clients
+      <a class="btn btn-primary pull-right"
+         href="<%= new_client_path %>">
+        <span class="glyphicon glyphicon-plus"></span>
+        New Client
+      </a>
+    </h1>
+
+    <table class="table table-striped clients-table">
+      <tbody>
+        <% @clients.each do |client| %>
+        <tr>
+          <td><%= link_to client.name, client_path(client) %></td>
+          <td><%= client.account_number %></td>
+          <td><%= mail_to client.contact_email %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Account Number</th>
+          <th>Contact Email</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>

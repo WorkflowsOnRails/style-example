@@ -1,0 +1,34 @@
+<h1>
+  Active Projects
+</h1>
+
+<table class="table table-striped">
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td>
+          <%= link_to project.client.name, client_path(project.client) %>
+        </td>
+        <td>
+          <%= link_to project.name, project_path(project) %>
+        </td>
+        <td>
+          <%= project.budget_hours %>
+        </td>
+        <td>
+          <span title="<%= project.deadline %>">
+            <%= distance_of_time_in_words_to_now(project.deadline) %>
+          </span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Project</th>
+      <th>Budget (hours)</th>
+      <th>Deadline</th>
+    </tr>
+  </thead>
+</table>

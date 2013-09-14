@@ -1,0 +1,15 @@
+<h1>
+  Add a New Project
+</h1>
+
+<%= simple_form_for [@client, @project], class: 'form-horizontal' do |f| %>
+  <%= f.input :name, label: 'Project name', required: true %>
+  <%= f.input :budget_hours, required: false %>
+  <%= f.input :deadline, class: 'form-inline', required: false %>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <%= f.button :submit, class: 'btn btn-success' %>
+      <%= link_to 'Cancel', :back, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

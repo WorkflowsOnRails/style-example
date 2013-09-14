@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eztracker</title>
+    <%= stylesheet_link_tag "application", media: "all",
+        "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">EzTracker</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%= nav_class_for_controller('work_logs') %>">
+            <%= link_to 'Log Work', new_work_log_path %>
+          </li>
+          <li class="<%= nav_class_for_controller('clients') %>">
+            <%= link_to 'Clients', clients_path %>
+          </li>
+          <li class="<%= nav_class_for_controller('projects') %>">
+            <%= link_to 'Projects', projects_path %>
+          </li>
+          <li>
+            <a href="#">Reports</a>
+          </li>
+        </ul>
+        <div class="nav navbar-nav navbar-right">
+          <p class="navbar-text">brendan</p>
+          <li><a class="navbar-link" href="#">logout</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="body">
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %>">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <%= javascript_include_tag "application",
+        "data-turbolinks-track" => true %>
+  </body>
+</html>
