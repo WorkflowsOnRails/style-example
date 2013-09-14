@@ -1,4 +1,6 @@
-<h1>Log a work item</h1>
+<% content_for :banner do %>
+  Log a work item
+<% end %>
 
 <%= render partial: 'form', locals: {work_log: @work_log} %>
 

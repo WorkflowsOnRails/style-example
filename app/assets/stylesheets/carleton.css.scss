@@ -1,3 +1,33 @@
+body {
+  background: #eee;
+}
+
+.flashes {
+  margin: 20px 40px;
+}
+
+.body {
+  margin: 20px 40px;
+  background: #fff;
+  padding: 0 0 20px;
+  min-height: 400px;
+}
+
+.content {
+  padding: 0 40px;
+}
+
+.no-margin-collapse {
+  height: 0;
+  font-size: 0;
+}
+
+.alert {
+  padding: 10px 15px;
+}
+
+/* TODO: Adjust color of alert borders. */
+
 .banner-header {
   height: 100px;
   position: relative;
@@ -15,6 +45,10 @@
     padding: 10px 40px;
     color: #f9f9f9;
     text-shadow: 2px 2px 1px #333;
+  }
+
+  .btn {
+    text-shadow: none;
   }
 
   .corner-bottom {

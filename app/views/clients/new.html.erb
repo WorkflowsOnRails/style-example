@@ -1,9 +1,9 @@
-<h1>
+<% content_for :banner do %>
   Add a New Client
   <a class="btn btn-default pull-right" href="<%= clients_path %>">
     <span class="glyphicon glyphicon-arrow-left"></span>
     Back to clients
   </a>
-</h1>
+<% end %>
 
 <%= render partial: 'form', locals: {client: @client} %>

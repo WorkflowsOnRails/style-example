@@ -1,6 +1,6 @@
-<h1>
+<% content_for :banner do %>
   Add a New Project
-</h1>
+<% end %>
 
 <%= simple_form_for [@client, @project], class: 'form-horizontal' do |f| %>
   <%= f.input :name, label: 'Project name', required: true %>

@@ -1,6 +1,6 @@
-<h1>
+<% content_for :banner do %>
   <%= link_to @project.client.name, client_path(@project.client) %>
-  /
+  &rsaquo;
   <%= @project.name %>
   <div class="btn-group btn-group-md pull-right">
     <a class="btn btn-default"
@@ -9,7 +9,7 @@
       Edit Project
     </a>
   </div>
-</h1>
+<% end %>
 
 <div class="form-horizontal">
   <div class="form-group">
