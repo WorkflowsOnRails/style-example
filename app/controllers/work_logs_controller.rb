@@ -1,5 +1,6 @@
 class WorkLogsController < ApplicationController
   before_action :prefill_template_variables
+  before_filter :authenticate_user!
 
   def prefill_template_variables
     @day = selected_day

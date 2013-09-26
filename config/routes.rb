@@ -1,4 +1,5 @@
 Eztracker::Application.routes.draw do
+  devise_for :users
   root to: "clients#index"
 
   resources :clients do

@@ -33,15 +33,21 @@
             <a href="#">Reports</a>
           </li>
         </ul>
-        <div class="nav navbar-nav navbar-right">
-          <p class="navbar-text">brendan.macdonell</p>
-          <li>
-            <a class="navbar-link" href="#">
-              logout
-              <span class="glyphicon glyphicon-log-out"></span>
-            </a>
-          </li>
-        </div>
+        <% unless current_user.nil? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to current_user.email, edit_user_registration_path,
+                  class: 'navbar-link' %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path,
+                  method: :delete, class: 'navbar-link' do %>
+                logout
+                <span class="glyphicon glyphicon-log-out"></span>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
       </div>
     </nav>
 
